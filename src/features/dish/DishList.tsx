@@ -3,23 +3,10 @@ import React, { useEffect, useState } from "react";
 
 import { Dish } from "../../types";
 import { Link } from "react-router-dom";
-import useDataService from "../../hooks/useDataService";
 
 const DishList: React.FC = () => {
     const [dishes, setDishes] = useState<Dish[]>();
     const [itemAvatar, setItemAvatar] = useState<boolean>(true);
-
-    const { query } = useDataService();
-
-    useEffect(() => {
-        (async () => {
-            const data = await query<Dish>({
-                table: "Dish",
-                select: ["id", "title"]
-            });
-            setDishes(data);
-        })();
-    }, [query]);
 
     return (
         <>
