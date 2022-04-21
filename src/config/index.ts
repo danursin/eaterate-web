@@ -1,5 +1,5 @@
 const config = {
-    cookoffApiUrl: "https://cookoff-2020-api.herokuapp.com/eaterate/"
+    apiUrl: "http://localhost:4000/graphql"
 };
 
 export default config;
